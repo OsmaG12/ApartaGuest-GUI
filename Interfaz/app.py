@@ -18,4 +18,4 @@ class apartamento(db.Model):
     piso = db.Column(db.Integer, nullable=False)
     tamaño = db.Column(db.Integer, nullable=False)
     precio_alquiler = db.Column(db.Double(10,2), nullable=False)
-    disponibilidad = db.Column(db.)
+    disponibilidad = db.Column(db.Column(Enum('Disponible', 'Ocupado', 'Reservado', name='estado_enum'), nullable=False))

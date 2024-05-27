@@ -33,17 +33,37 @@
                 <form action="/Iniciar_Sesion" method="POST">
 
 
-                    <label for="nombre">Nombre de usuario:</label>
+                    <label for="nombre"><b>Nombre de usuario:</b></label>
                     <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
                     <br>
                     <br>
-                    <label for="contra">Contraseña:</label>
+                    <label for="contra"><b>Contraseña:</b></label>
                     <input type="password" id="contra" name="contra" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
                     <br>
                     <br>
 
+                    <style>
+                        .login-button {
+                            background-color: black;
+                            color: #b4f59e;
+                            padding: 15px 30px;
+                            border: none;
+                            border-radius: 10px;
+                            font-size: 15px;
+                            font-weight: bold;
+                            cursor: pointer;
+                            text-align: center;
+                            display: inline-block;
+                        }
+                
+                        .login-button:hover {
+                            background-color: #333;
+                        }
+                    </style>
+
                     <div>
-                        <button type="button" class="btn btn-outline-primary">Iniciar Sesión</button>
+                        <!-- <button type="button" class="btn btn-outline-primary">Iniciar Sesión</button> -->
+                        <button class="login-button">LOGIN</button>
                     </div>
 
                     <br>
