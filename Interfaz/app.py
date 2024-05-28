@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, url_for, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Enum, Numeric, Date, ForeignKey
 from pymysql import connect
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = 'Ñoño_123'
 
 # Configurar la base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Frutillita12@localhost:3306/apartaguest'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Estrellita20.@localhost:3306/apartaguest'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -23,7 +23,7 @@ class apartamentos(db.Model):
     piso = db.Column(db.Integer, nullable=False)
     tamaño = db.Column(db.Integer, nullable=False)
     precio_alquiler = db.Column(db.Numeric(10, 2), nullable=False)
-    disponibilidad = db.Column(db.Enum('Disponible', 'No Disponible'), nullable=False)
+    #disponibilidad = db.Column(Enum('Disponible', 'No Disponible', name='disponibilidad_enum'), nullable=False)
     clasificaciones = db.relationship('clasificacionapartamentos', backref='apartamento', lazy=True)
     inquilinos = db.relationship('inquilinos', backref='apartamento', lazy=True)
     contratos = db.relationship('contratos', backref='apartamento', lazy=True)
@@ -59,7 +59,7 @@ class pagos(db.Model):
     id_pago = db.Column(db.Integer, primary_key=True)
     fecha_pago = db.Column(db.Date, nullable=False)
     monto = db.Column(db.Numeric(10, 2), nullable=False)
-    tipo_pago = db.Column(db.Enum('Efectivo', 'Tarjeta', 'Transferencia'), nullable=False)
+    tipo_pago = db.Column(Enum('Efectivo', 'Tarjeta', 'Transferencia', name='tipo_pago_enum'), nullable=False)
     id_contrato = db.Column(db.Integer, db.ForeignKey('contratos.id_contrato'), nullable=False)
 
 class usuarios(db.Model, UserMixin):
@@ -68,7 +68,7 @@ class usuarios(db.Model, UserMixin):
     nombre = db.Column(db.String(50), nullable=False)
     contra = db.Column(db.String(250), nullable=False)
 
-    #Encriptar contraseña
+    # Encriptar contraseña
     def set_password(self, password):
         self.contra = generate_password_hash(password)
 
