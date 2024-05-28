@@ -6,6 +6,7 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -22,60 +23,132 @@
     </nav>
     <!-- NavBar -->
 
-    <div class="container">
+        <div class="bg">
 
-        <div class="text-center mt-5" style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
-            <div class="m-5">
-                <h1>Iniciar Sesión</h1>
-            </div>
-
-            <div>
-                <form action="/login" method="POST">
-
-
-                    <label for="nombre"><b>Nombre de usuario:</b></label>
-                    <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                    <br>
-                    <br>
-                    <label for="contra"><b>Contraseña:</b></label>
-                    <input type="password" id="contra" name="contra" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                    <br>
-                    <br>
-
-                    <style>
-                        .login-button {
-                            background-color: black;
-                            color: #b4f59e;
-                            padding: 15px 30px;
-                            border: none;
-                            border-radius: 10px;
-                            font-size: 15px;
-                            font-weight: bold;
-                            cursor: pointer;
-                            text-align: center;
-                            display: inline-block;
-                        }
+            <div class="login-container text-center mt-5" style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+                <div class="m-5">
+                    <h1>Iniciar Sesión</h1>
+                </div>
                 
-                        .login-button:hover {
-                            background-color: #333;
-                        }
-                    </style>
-
-                    <div>
-                        <!-- <button type="button" class="btn btn-outline-primary">Iniciar Sesión</button> -->
-                        <button class="login-button">LOGIN</button>
-                    </div>
-
-                    <br>
-
-                    <div>
-                        <a href="{{ url_for('Ir_registrarse') }}">Registrarse</a>
-                    </div>
-
-                </form>
+                <div>
+                    <form action="/login" method="POST">
+    
+    
+                        <label for="nombre"><b>Nombre de usuario:</b></label>
+                        <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <br>
+                        <br>
+                        <label for="contra"><b>Contraseña:</b></label>
+                        <input type="password" id="contra" name="contra" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <br>
+                        <br>
+    
+                        <style>
+                            .login-button {
+                                background-color: black;
+                                color: #b4f59e;
+                                padding: 15px 30px;
+                                border: none;
+                                border-radius: 10px;
+                                font-size: 15px;
+                                font-weight: bold;
+                                cursor: pointer;
+                                text-align: center;
+                                display: inline-block;
+                            }
+                    
+                            .login-button:hover {
+                                background-color: #333;
+                            }
+                        </style>
+    
+                        <div>
+                            <!-- <button type="button" class="btn btn-outline-primary">Iniciar Sesión</button> -->
+                            <button class="login-button">LOGIN</button>
+                        </div>
+    
+                        <br>
+    
+                        <div>
+                            <a href="{{ url_for('Ir_registrarse') }}">Registrarse</a>
+                        </div>
+    
+                    </form>
+            </div>
         </div>
-
     </div>
+
+    <footer style="background-color: rgb(12, 129, 17)" class="text-white text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Footer Content</h5>
+      
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                voluptatem veniam, est atque cumque eum delectus sint!
+              </p>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
+      
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0">Links</h5>
+      
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
