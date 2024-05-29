@@ -5,7 +5,8 @@ body, html {
 }
 
 .bg {
-    background-image: url('/ApartaGuest-GUI/Interfaz/templates/img/Login.jpg'); /* Asegúrate de colocar la imagen en la ruta correcta */
+    background-image: url('/Interfaz/css/img/Login.jpg');
+    /* background-image: url('/Interfaz/templates/img/Login.jpg'); Asegúrate de colocar la imagen en la ruta correcta */
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -54,4 +55,12 @@ button:hover {
     width: 80%;
     text-align: center;
     margin: 10px auto;
+}
+
+/* HOME */
+.contenedor{
+    
+        position: relative;
+        display: inline-block;
+        text-align: center;
 }
